@@ -1,7 +1,9 @@
 package com.standalonejava;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Set;
 
 public class FindCommonCharacters {
 
@@ -30,7 +32,7 @@ public class FindCommonCharacters {
         int n=a.length;
         int m=b.length;
 
-        HashSet<Character> setFirstArray =new HashSet<Character>();
+        HashSet<Character> setFirstArray =new HashSet<>();
         HashSet<Character> setSecondArray =new HashSet<Character>();
         HashSet<Character> setThirdArray =new HashSet<Character>();
         for (char ch: a)
@@ -39,7 +41,6 @@ public class FindCommonCharacters {
         for (char ch:b)
             setSecondArray.add(ch);
         setFirstArray.retainAll(setSecondArray);
-
         for (char d:setFirstArray)
             System.out.print(d);
         System.out.println("\n"+"---------");

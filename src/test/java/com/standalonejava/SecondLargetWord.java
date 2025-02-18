@@ -1,16 +1,17 @@
-package org.test.standalone;
+package com.standalonejava;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class SecondHighest {
+public class SecondLargetWord {
 
     public static void main(String[] args) {
-        SecondHighest secHigh = new SecondHighest();
+        SecondLargetWord secHigh = new SecondLargetWord();
         int lengSec= secHigh.findOString("This is english statement output abcdefghi");
 
         System.out.println(lengSec);
+
+        secHigh.tryArrayList();
 
     }
 
@@ -51,5 +52,15 @@ public class SecondHighest {
         System.out.println(strArray[markIndex]+" with length "+secHighest);
         return secHighest;
  }
+
+ public void tryArrayList(){
+        ArrayList newList=new ArrayList();
+        newList.add("Amol");
+        newList.add("Gourav");
+        newList.add(5);
+     System.out.println(newList);
+    }
+
+
 }
 

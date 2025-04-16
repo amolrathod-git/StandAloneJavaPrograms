@@ -1,4 +1,4 @@
-package com.standalonejava;
+package com.stringss;
 
 import javax.sound.midi.Soundbank;
 import java.sql.SQLOutput;
@@ -17,6 +17,8 @@ public class ReverseStringsInCollection {
             String str= "Amol, is doing programming9 practices";
 
             String[] subStr=str.split("\\d");
+
+
 
             // System.out.println(a);
             ArrayList<String> Sentence = new ArrayList<String>(Arrays.asList(subStr));

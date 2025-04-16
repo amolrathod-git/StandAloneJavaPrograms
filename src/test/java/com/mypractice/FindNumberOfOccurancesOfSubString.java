@@ -9,33 +9,8 @@ public class FindNumberOfOccurancesOfSubString {
         String input="hihihihiabchia";
         String keyword="hi";
 
-        obj.findOccurance( input,  keyword);
+        obj.findOccurance3( input,  keyword);
     }
-    private void findOccurance(String input, String keyword) {
-
-        int iLength=input.length();
-        int keyLength=keyword.length();
-        int count=0;
-         for (int i=0;i<iLength;i++){
-
-             if(input.charAt(i)==keyword.charAt(0) ){
-                    for(int j=0;j<keyLength;j++){
-                          if(input.charAt(i)==keyword.charAt(j) )
-                          {
-                              i++;
-                              if (j==keyLength) count++;
-
-                          }else{ i--;break;}
-                      }
-
-
-                      }
-
-        }
-
-        System.out.println("occurance is "+count);
-    }
-
 
     public void findOccurance1(String input, String keyword){
         int iLength=input.length();

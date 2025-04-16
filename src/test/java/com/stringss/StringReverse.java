@@ -1,4 +1,4 @@
-package com.standalonejava;
+package com.stringss;
 
 public class StringReverse {
 

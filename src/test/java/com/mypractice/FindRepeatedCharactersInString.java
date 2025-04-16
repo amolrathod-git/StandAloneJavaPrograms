@@ -2,6 +2,7 @@ package com.mypractice;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FindRepeatedCharactersInString {
@@ -48,20 +49,26 @@ public class FindRepeatedCharactersInString {
         {
 
 
-            if (iterator.getValue()>1)
-            System.out.println(iterator.getKey()+" "+iterator.getValue());
+            if (iterator.getValue()==1)
+            System.out.print(iterator.getKey()+" "+iterator.getValue());
         }
 
 
     }
 
 
+     static {
+
+        System.out.println("test static");
+
+    }
+
 
 
     public static void main(String[] a){
         FindRepeatedCharactersInString findRepeated=new FindRepeatedCharactersInString();
-        findRepeated.usingASCIIvalue("aaabbccccc");
-        findRepeated.usingHashMap("aaabbccccc");
+        findRepeated.usingASCIIvalue("aaabbcccccxyzddfce");
+        findRepeated.usingHashMap("aaabbcccccxyzddfce");
 
     }
 

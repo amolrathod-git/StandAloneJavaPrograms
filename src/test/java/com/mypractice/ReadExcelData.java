@@ -18,6 +18,9 @@ import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.io.FileInputStream;
 import java.sql.SQLOutput;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ReadExcelData  {
 
@@ -80,6 +83,8 @@ public class ReadExcelData  {
 
     public void printDataOfExcel(String filePath) {
         try {
+
+
             File file = new File(filePath);
             FileInputStream fis = new FileInputStream(file);
             XSSFWorkbook wb = new XSSFWorkbook(fis);
@@ -87,14 +92,28 @@ public class ReadExcelData  {
 
             int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
             int colCount = sheet.getRow(sheet.getFirstRowNum()).getLastCellNum()-sheet.getRow(sheet.getFirstRowNum()).getFirstCellNum();
+
+            Object[][] obj=new Object[rowCount+1][1];
             System.out.println("Row Count is "+rowCount+"\t Column count is "+colCount);
 
-            for (int i = sheet.getFirstRowNum(); i <= sheet.getFirstRowNum()+rowCount; i++) {
-                for (int j = sheet.getRow(i).getFirstCellNum(); j < sheet.getRow(i).getFirstCellNum()+colCount; j++) {
-                    String cell=sheet.getRow(i).getCell(j).toString();
-                    System.out.print(cell+"\t");
+            System.out.println(sheet.getRow(4).getFirstCellNum());
+            int count =0;
+
+            for (int i = sheet.getFirstRowNum(); i <sheet.getFirstRowNum()+rowCount; i++) {
+                System.out.println(i);
+                Map<Object, Object> myDataMap=new HashMap<>();
+                for (int j = sheet.getRow(i).getFirstCellNum(); j <sheet.getRow(i).getFirstCellNum()+colCount; j++) {
+                    //String cell=sheet.getRow(i).getCell(j).toString();
+                    System.out.print(j+"\t");
+                    myDataMap.put(sheet.getRow(sheet.getFirstRowNum()).getCell(j).toString(),sheet.getRow(i+1).getCell(j).toString() );
+
                 }
+
+                obj[count][0]=myDataMap;
+
+                System.out.println(Arrays.asList(obj[count][0]));
                 System.out.println("\n");
+                count++;
             }
             wb.close();
 

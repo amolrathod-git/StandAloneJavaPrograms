@@ -29,6 +29,7 @@ public class ExceptionThrow {
 
         }
         finally {
+
             System.out.println("I am fun finally");
         }
 

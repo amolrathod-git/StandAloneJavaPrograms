@@ -1,4 +1,4 @@
-package com.standalonejava;
+package com.stringss;
 
 public class StringOperations {
 
@@ -12,6 +12,7 @@ public class StringOperations {
 
         StringBuilder a1 = new StringBuilder("Sachin");
         a1.substring(4);
+        a1.append(" tendulkar");
         System.out.println(a1);
 
     }
